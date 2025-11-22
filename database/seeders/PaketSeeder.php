@@ -14,25 +14,25 @@ class PaketSeeder extends Seeder
                 'nama_paket' => 'Paket Dasar',
                 'kategori' => 'Dasar',
                 'harga' => 100000,
-                'kecepatan' => 10
+                'kecepatan' => '10 Mbps'
             ],
             [
                 'nama_paket' => 'Paket Reguler',
                 'kategori' => 'Reguler',
                 'harga' => 150000,
-                'kecepatan' => 20
+                'kecepatan' => '20 Mbps'
             ],
             [
                 'nama_paket' => 'Paket Bisnis',
                 'kategori' => 'Bisnis',
                 'harga' => 200000,
-                'kecepatan' => 40
+                'kecepatan' => '40 Mbps'
             ],
             [
                 'nama_paket' => 'Paket Eksekutif',
                 'kategori' => 'Eksekutif',
                 'harga' => 250000,
-                'kecepatan' => 80
+                'kecepatan' => '80 Mbps'
             ]
         ];
 
@@ -43,7 +43,7 @@ class PaketSeeder extends Seeder
             );
         }
 
-        $this->command->info('Successfully created ' . count($pakets) . ' internet packages!');
+        $this->command->info('Successfully created '.count($pakets).' internet packages!');
         $this->command->info("Card Number : 4811 1111 1111 1114 \nCVV : 123 \nEXP : 05/25");
     }
 }

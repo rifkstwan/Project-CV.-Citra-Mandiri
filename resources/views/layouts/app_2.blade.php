@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>@yield('title', 'Dashboard')</title>
 
+  <link rel="icon" type="image/jpeg" href="{{ asset('image/profile.jpg') }}">
   <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet" type="text/css" >
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" crossorigin="anonymous"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>

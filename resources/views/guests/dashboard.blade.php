@@ -4,8 +4,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alief Smart Wifi</title>
+    <title>CV. Citra Mandiri</title>
 
+    <link rel="icon" type="image/jpeg" href="{{ asset('image/profile.jpg') }}">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -18,8 +19,10 @@
         <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top shadow-sm">
             <div class="container">
                 <a class="navbar-brand fw-bold" href="#">
-                    <img src="image/profile.webp" alt="profile" width="40" class="rounded-circle me-2">
-                    Alif Smart Wifi
+                    <img src="image/profile.jpg" alt="profile" width="40" class="rounded-circle me-2">
+                    CV. Citra Mandiri
+
+
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -125,7 +128,7 @@
                             </div>
                             <div class="card-body">
                                 <p class="text-muted">Kecepatan Internet</p>
-                                <p class="h2 fw-bold text-primary">{{ $paket['kecepatan'] }} Mbps</p>
+                                <p class="h2 fw-bold text-primary">{{ $paket['kecepatan'] }}</p>
                                 <p class="text-muted mt-3">Harga Bulanan</p>
                                 <p class="h3 fw-bold">Rp {{ number_format($paket['harga'], 0, ',', '.') }}</p>
                                 <p class="badge bg-success">Unlimited</p>
@@ -149,7 +152,7 @@
                 <div id="alamat" class="col-lg-4 col-md-6 mb-4">
                     <h5>Alamat</h5>
                     <div class="ratio ratio-16x9">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15795.74839818817!2d114.358296!3d-8.209192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd145f4702f3a69%3A0x33355348d28a3473!2sBanyuwangi%2C%20East%20Java!5e0!3m2!1sen!2sid!4v1663412345678!5m2!1sen!2sid" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d506749.9288553105!2d110.56452652142337!3d-7.127867649295776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70babb25fc5b4b%3A0x3027a76e352baf0!2sGrobogan%20Regency%2C%20Central%20Java!5e0!3m2!1sen!2sid!4v1760631750437!5m2!1sen!2sid" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
 
@@ -157,37 +160,23 @@
                     <h5>Informasi</h5>
                     <ul class="list-unstyled">
                         <li>
-                            <p><i class="fa-solid fa-phone me-2"></i>+6285730902001</p>
+                            <p><i class="fa-solid fa-phone me-2"></i>+628122577686</p>
                         </li>
                         <li>
-                            <p><i class="fa-solid fa-envelope me-2"></i>Faturalief15@gmail.com</p>
+                            <p><i class="fa-solid fa-envelope me-2"></i>citramandiri@gmail.com</p>
                         </li>
                         <li>
-                            <p><i class="fa-solid fa-location-dot me-2"></i>Perumahan Pakis Kalirejo Blok N no 1</p>
+                            <p><i class="fa-solid fa-location-dot me-2"></i>Rt.02/Rw.01, Tegowanu Wetan, Kec. Tegowanu, Kab. Grobogan</p>
                         </li>
                     </ul>
                 </div>
 
-                <div id="sosial-media" class="col-lg-4 col-12 mb-4">
-                    <h5>Sosial Media</h5>
-                    <ul class="list-unstyled">
-                        <li>
-                            <p><i class="fa-brands fa-telegram me-2"></i>085730902001</p>
-                        </li>
-                        <li>
-                            <p><i class="fa-brands fa-facebook me-2"></i>faturalief17</p>
-                        </li>
-                        <li>
-                            <p><i class="fa-brands fa-twitter me-2"></i>aliefcahyono15</p>
-                        </li>
-                        <li>
-                            <p><i class="fa-brands fa-instagram me-2"></i>aliefchn203</p>
-                        </li>
-                    </ul>
-                </div>
+
             </div>
             <div class="text-center pt-3 border-top border-secondary">
-                <p>© {{ date('Y') }} Alif Smart Wifi. All Rights Reserved.</p>
+                <p>© {{ date('Y') }} CV. Citra Mandiri
+
+                    . All Rights Reserved.</p>
             </div>
         </div>
     </footer>

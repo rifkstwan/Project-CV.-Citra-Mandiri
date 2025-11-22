@@ -14,7 +14,9 @@
             <div class="container">
                 <a class="navbar-brand" href="{{ route('profile') }}">
                     <img src="image/profile.jpg" alt="profile" width="50" class="rounded-circle">
-                    Alif Smart Wifi
+                   CV. Citra Mandiri
+
+
                   </a>
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
@@ -139,22 +141,12 @@
                     <h5>Informasi</h5>
                 </div>
                 <div class="content">
-                    <p><i class="fa-solid fa-phone"></i>+6285730902001</p>
-                    <p><i class="fa-solid fa-envelope"></i>Faturalief15@gmail.com</p>
-                    <p><i class="fa-solid fa-location-dot"></i>Perumahan Pakis Kalirejo Blok N no 1</p>
+                    <p><i class="fa-solid fa-phone"></i>+628122577686</p>
+                    <p><i class="fa-solid fa-envelope"></i>citramandiri@gmail.com</p>
+                    <p><i class="fa-solid fa-location-dot"></i>Rt.02/Rw.01, Tegowanu Wetan, Kec. Tegowanu, Kab. Grobogan</p>
                 </div>
               </div>
-              <div class="col">
-                <div class="title">
-                    <h5>Sosial media</h5>
-                </div>
-                <div class="content">
-                    <p><i class="fa-brands fa-telegram"></i>085730902001</p>
-                    <p><i class="fa-brands fa-facebook"></i>faturalief17@yahoo.com</p>
-                    <p><i class="fa-brands fa-twitter"></i>aliefcahyono15@yahoo.com</p>
-                    <p><i class="fa-brands fa-instagram"></i>aliefchn203</p>
-                </div>
-              </div>
+             
             </div>
           </div>
     </footer>

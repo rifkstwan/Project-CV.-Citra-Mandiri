@@ -27,7 +27,7 @@
             <h2 style="margin:0;">Alief Smart Wifi</h2>
             <p style="margin:0; font-size:13px;">
                 Jl. Nangka No.1, Dusun Jurang Jero, Kalirejo, Kec. Kabat, Kabupaten Banyuwangi, Jawa Timur 68461<br>
-                Telp: 085730902001 | Email: Faturalief15@gmail.com
+                Telp: 085730902001 | Email: citramandiri@gmail.com
             </p>
         </div>
         <hr>

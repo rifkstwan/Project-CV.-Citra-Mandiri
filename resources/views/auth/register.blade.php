@@ -4,9 +4,11 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Sign Up Page | Alif Smart Wifi</title>
+  <title>Sign Up Page |</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
   <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
+  <link rel="icon" type="image/jpeg" href="{{ asset('image/profile.jpg') }}">
+
   <style>
     .login-container {
       border-radius: 10px;
@@ -114,7 +116,7 @@
         </div>
 
         <div class="col-md-6 p-0 d-none d-md-block">
-          <img alt="A cup of coffee on a yellow background" class="img-fluid h-100" src="{{ asset('image/login.webp') }}" />
+          <img alt="A cup of coffee on a yellow background" class="img-fluid h-100" src="{{ asset('image/login.png') }}" />
         </div>
       </div>
     </div>
