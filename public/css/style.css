@@ -709,3 +709,1218 @@ iframe {
     font-size: 11px;
 }
 
+
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+
+.hero-section {
+    background: linear-gradient(135deg, #B8D12E 0%, #8BA921 100%);
+    min-height: 600px;
+    padding-top: 3rem;
+    padding-bottom: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding-bottom: 3rem;
+}
+
+/* Badge Kuning */
+.badge.bg-warning {
+    background: #ffc107 !important;
+    color: #000 !important;
+    font-weight: 700 !important;
+}
+
+/* Trust Box */
+.trust-box {
+    transition: all 0.3s ease;
+    background: white;
+    border-radius: 0.75rem;
+}
+
+.trust-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* =========================================
+   ANIMATED CARDS - Di Bawah CTA
+   ========================================= */
+
+.animated-cards-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 2rem 0;
+    margin-top: 0;
+    border-top: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.animated-card-wrapper {
+    display: flex;
+    animation: slideCards 30s linear infinite;
+    gap: 1.5rem;
+    padding: 0 1rem;
+}
+
+.feature-card {
+    background: white;
+    border-radius: 0.75rem;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 300px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card i {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.feature-card .text-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-card .title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #212529;
+    margin-bottom: 0.25rem;
+}
+
+.feature-card .description {
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+/* Icon Colors per Card */
+.feature-card:nth-child(3n+1) i {
+    color: #0d6efd; /* Primary - Globe */
+}
+
+.feature-card:nth-child(3n+2) i {
+    color: #198754; /* Success - Credit Card */
+}
+
+.feature-card:nth-child(3n+3) i {
+    color: #ffc107; /* Warning - Shield */
+}
+
+/* Sliding Animation */
+@keyframes slideCards {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pause on Hover */
+.animated-card-wrapper:hover {
+    animation-play-state: paused;
+}
+
+/* Remove Static Cards */
+.feature-cards-static {
+    display: none !important;
+}
+
+/* =========================================
+   HOVER EFFECTS
+   ========================================= */
+
+.hover-lift {
+    transition: all 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2) !important;
+}
+
+
+
+
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+
+.hero-section {
+    background: linear-gradient(135deg, #B8D12E 0%, #8BA921 100%);
+    min-height: 600px;
+    padding-top: 3rem;
+    padding-bottom: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding-bottom: 3rem; /* Extra space untuk pisahkan dari animated cards */
+}
+
+/* Badge Kuning */
+.badge.bg-warning {
+    background: #ffc107 !important;
+    color: #000 !important;
+    font-weight: 700 !important;
+}
+
+/* Trust Box */
+.trust-box {
+    transition: all 0.3s ease;
+    background: white;
+    border-radius: 0.75rem;
+}
+
+.trust-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* =========================================
+   ANIMATED CARDS - Moved to Bottom
+   ========================================= */
+
+.animated-cards-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    padding: 2rem 0;
+    margin-top: 3rem; /* Extra spacing dari CTA buttons */
+    border-top: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.animated-card-wrapper {
+    display: flex;
+    animation: slideCards 30s linear infinite;
+    gap: 1.5rem;
+    padding: 0 1rem;
+}
+
+.feature-card {
+    background: white;
+    border-radius: 0.75rem;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 280px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card i {
+    font-size: 2rem;
+    color: #0d6efd;
+    flex-shrink: 0;
+}
+
+.feature-card .text-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-card .title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #212529;
+    margin-bottom: 0.25rem;
+}
+
+.feature-card .description {
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+/* Animation */
+@keyframes slideCards {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Icon Colors */
+.feature-card:nth-child(1) i {
+    color: #0d6efd; /* Primary - Globe */
+}
+
+.feature-card:nth-child(2) i {
+    color: #198754; /* Success - Credit Card */
+}
+
+.feature-card:nth-child(3) i {
+    color: #ffc107; /* Warning - Shield */
+}
+
+/* Pause on Hover */
+.animated-card-wrapper:hover {
+    animation-play-state: paused;
+}
+
+/* =========================================
+   HOVER EFFECTS
+   ========================================= */
+
+.hover-lift {
+    transition: all 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Popular Card */
+.popular-card {
+    transform: scale(1.05);
+    border: 3px solid #ffc107 !important;
+    z-index: 10;
+}
+
+/* =========================================
+   HERO SECTION - UPDATED
+   ========================================= */
+
+.hero-section {
+    background: linear-gradient(135deg, #B8D12E 0%, #8BA921 100%);
+    min-height: 600px;
+    padding-top: 3rem;
+    padding-bottom: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding-bottom: 2rem;
+}
+
+/* Badge Kuning */
+.badge.bg-warning {
+    background: #ffc107 !important;
+    color: #000 !important;
+    font-weight: 700 !important;
+}
+
+/* Trust Box */
+.trust-box {
+    transition: all 0.3s ease;
+    background: white;
+    border-radius: 0.75rem;
+}
+
+.trust-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* CTA Buttons - Extra Spacing */
+.hero-content .mb-5.pb-4 {
+    margin-bottom: 3rem !important;
+    padding-bottom: 3rem !important;
+}
+
+/* Feature Cards Static - Separated Section */
+.feature-cards-static {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-top: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 2rem 0;
+    margin-top: 0;
+}
+
+.feature-card-box {
+    transition: all 0.3s ease;
+    background: white;
+    border-radius: 0.75rem;
+}
+
+.feature-card-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+.feature-card-box h6 {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.feature-card-box small {
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+/* REMOVE OLD ANIMATED CARDS */
+.animated-cards-container,
+.animated-card-wrapper,
+.feature-card {
+    display: none !important;
+}
+
+/* Hover Lift Effect */
+.hover-lift {
+    transition: all 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Popular Card */
+.popular-card {
+    transform: scale(1.05);
+    border: 3px solid #ffc107 !important;
+    z-index: 10;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .hero-section {
+        min-height: 500px;
+        padding-top: 2rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding-top: 1.5rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.75rem !important;
+    }
+    
+    .trust-box h4 {
+        font-size: 1.5rem !important;
+    }
+    
+    .feature-card-box .d-flex {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .icon-wrapper {
+        margin-bottom: 0.75rem !important;
+        margin-right: 0 !important;
+    }
+    
+    .popular-card {
+        transform: scale(1);
+    }
+}
+
+
+/* =========================================
+   PACKAGE SECTION - FIXED ROUNDED
+   ========================================= */
+
+.package-section {
+    background: #f8f9fa;
+    padding: 4rem 0;
+}
+
+/* Package Card - FORCE ROUNDED */
+.package-section .card {
+    border: none;
+    border-radius: 1rem !important; /* Force rounded */
+    overflow: hidden !important; /* Ensure header follows rounded */
+    transition: all 0.3s ease;
+}
+
+.package-section .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Card Header - FORCE ROUNDED TOP */
+.package-section .card-header {
+    padding: 1.5rem;
+    border-top-left-radius: 1rem !important;
+    border-top-right-radius: 1rem !important;
+}
+
+/* Rounded Top 4 Class */
+.rounded-top-4 {
+    border-top-left-radius: 1rem !important;
+    border-top-right-radius: 1rem !important;
+}
+
+/* Rounded 4 untuk keseluruhan card */
+.rounded-4 {
+    border-radius: 1rem !important;
+}
+
+.package-section .card-body {
+    padding: 2rem 1.5rem;
+}
+
+/* Display Price */
+.package-section .display-4 {
+    font-size: 2.5rem;
+    color: #0d6efd;
+}
+
+/* Badges in Card */
+.package-section .badge {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Popular Card Highlight - MAINTAIN ROUNDED */
+.popular-card {
+    transform: scale(1.05);
+    border: 3px solid #ffc107 !important;
+    z-index: 10;
+    position: relative;
+    border-radius: 1rem !important; /* Ensure rounded even with border */
+    overflow: hidden !important;
+}
+
+.popular-card .card-header {
+    background: linear-gradient(135deg, #dc3545, #c82333) !important;
+    border-top-left-radius: calc(1rem - 3px) !important; /* Adjust for border */
+    border-top-right-radius: calc(1rem - 3px) !important;
+}
+
+/* Popular Badge */
+.popular-card .position-absolute {
+    z-index: 100 !important;
+}
+
+/* CTA Button */
+.package-section .btn-lg {
+    padding: 0.875rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Trust Banner */
+.package-section .alert {
+    background: #cfe2ff;
+    border: none;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .popular-card {
+        transform: scale(1);
+        margin-bottom: 2rem;
+    }
+    
+    .package-section .row {
+        padding-top: 1rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .package-section .display-4 {
+        font-size: 2rem;
+    }
+    
+    .package-section .h2 {
+        font-size: 1.5rem;
+    }
+    
+    .package-section .row {
+        padding-top: 1.5rem !important;
+    }
+}
+
+
+
+/* =========================================
+   HERO SECTION - IMAGE LEFT LAYOUT
+   ========================================= */
+
+.hero-section {
+    background: linear-gradient(135deg, #B8D12E 0%, #8BA921 100%);
+    min-height: 600px;
+    padding-top: 2rem;
+    padding-bottom: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Hero Image - Left Side */
+.hero-image-wrapper {
+    animation: fadeInLeft 1s ease-out;
+}
+
+.hero-image {
+    max-width: 85%;
+    height: auto;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.15));
+    transition: transform 0.3s ease;
+}
+
+.hero-image:hover {
+    transform: scale(1.05);
+}
+
+/* Animation */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Badge */
+.badge.bg-warning {
+    background: #ffc107 !important;
+    color: #000 !important;
+    font-weight: 700 !important;
+}
+
+/* Trust Box */
+.trust-box {
+    transition: all 0.3s ease;
+    background: white;
+    border-radius: 0.75rem;
+}
+
+.trust-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Animated Cards */
+.animated-cards-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 2rem 0;
+    margin-top: 0;
+    border-top: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.animated-card-wrapper {
+    display: flex;
+    animation: slideCards 30s linear infinite;
+    gap: 1.5rem;
+    padding: 0 1rem;
+}
+
+.feature-card {
+    background: white;
+    border-radius: 0.75rem;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 300px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card i {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.feature-card:nth-child(3n+1) i {
+    color: #0d6efd;
+}
+
+.feature-card:nth-child(3n+2) i {
+    color: #198754;
+}
+
+.feature-card:nth-child(3n+3) i {
+    color: #ffc107;
+}
+
+@keyframes slideCards {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+
+
+
+
+
+/* =========================================
+   HERO SECTION - PERFECT BALANCE
+   ========================================= */
+
+.hero-section {
+    background: linear-gradient(135deg, #B8D12E 0%, #8BA921 100%);
+    min-height: 600px;
+    padding-top: 1rem;
+    padding-bottom: 0;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Hero Image Wrapper */
+.hero-image-wrapper {
+    position: relative;
+    padding: 1rem 0;
+}
+
+/* Hero Image - Balanced Size */
+.hero-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 0.15));
+}
+
+/* Badge */
+.badge.bg-warning {
+    background: #ffc107 !important;
+    color: #000 !important;
+    font-weight: 700 !important;
+}
+
+/* Trust Box */
+.trust-box {
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.trust-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Animated Cards */
+.animated-cards-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 2rem 0;
+    margin-top: 0;
+    border-top: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.animated-card-wrapper {
+    display: flex;
+    animation: slideCards 30s linear infinite;
+    gap: 1.5rem;
+    padding: 0 1rem;
+}
+
+.feature-card {
+    background: white;
+    border-radius: 0.75rem;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 300px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card i {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.feature-card .text-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-card .title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #212529;
+    margin-bottom: 0.25rem;
+}
+
+.feature-card .description {
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+/* Icon Colors */
+.feature-card:nth-child(3n+1) i {
+    color: #0d6efd;
+}
+
+.feature-card:nth-child(3n+2) i {
+    color: #198754;
+}
+
+.feature-card:nth-child(3n+3) i {
+    color: #ffc107;
+}
+
+/* Sliding Animation */
+@keyframes slideCards {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animated-card-wrapper:hover {
+    animation-play-state: paused;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .hero-section {
+        min-height: 500px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding-top: 1.5rem;
+    }
+    
+    .hero-image {
+        max-width: 85%;
+        margin: 0 auto;
+        display: block;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.75rem !important;
+    }
+    
+    .trust-box h4 {
+        font-size: 1.5rem !important;
+    }
+}
+
+
+
+/* =========================================
+   HERO SECTION - SHORTER HEIGHT
+   ========================================= */
+
+/* =========================================
+   HERO SECTION - BADGE FIX
+   ========================================= */
+
+.hero-section {
+    background: linear-gradient(135deg, #B8D12E 0%, #8BA921 100%);
+    min-height: 500px;
+    padding-top: 2rem; /* Tambah padding top */
+    padding-bottom: 0;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding-top: 1.5rem; /* Extra padding untuk badge */
+    padding-bottom: 1rem;
+}
+
+/* Hero Image */
+.hero-image-wrapper {
+    position: relative;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 0.15));
+}
+
+/* Badge - Ensure No Cutoff */
+.badge.bg-warning {
+    background: #ffc107 !important;
+    color: #000 !important;
+    font-weight: 700 !important;
+    display: inline-flex !important;
+    align-items: center;
+}
+
+/* Trust Box */
+.trust-box {
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.trust-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Animated Cards */
+.animated-cards-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem 0;
+    margin-top: 0;
+    border-top: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.animated-card-wrapper {
+    display: flex;
+    animation: slideCards 30s linear infinite;
+    gap: 1.5rem;
+    padding: 0 1rem;
+}
+
+.feature-card {
+    background: white;
+    border-radius: 0.75rem;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 300px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card i {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.feature-card .text-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-card .title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #212529;
+    margin-bottom: 0.25rem;
+}
+
+.feature-card .description {
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+/* Icon Colors */
+.feature-card:nth-child(3n+1) i {
+    color: #0d6efd;
+}
+
+.feature-card:nth-child(3n+2) i {
+    color: #198754;
+}
+
+.feature-card:nth-child(3n+3) i {
+    color: #ffc107;
+}
+
+/* Sliding Animation */
+@keyframes slideCards {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animated-card-wrapper:hover {
+    animation-play-state: paused;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .hero-section {
+        min-height: 450px;
+        padding-top: 1.5rem;
+    }
+    
+    .hero-content {
+        padding-top: 1rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: auto;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    
+    .hero-content {
+        padding-top: 0.5rem;
+    }
+    
+    .hero-image {
+        max-width: 85%;
+        margin: 0 auto;
+        display: block;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.75rem !important;
+    }
+    
+    .trust-box h4 {
+        font-size: 1.5rem !important;
+    }
+    
+    .animated-cards-container {
+        padding: 1rem 0;
+    }
+}
+
+
+
+
+
+
+
+
+/* =========================================
+   PACKAGE SECTION - BADGE FIX
+   ========================================= */
+
+.package-section {
+    background: #f8f9fa;
+    padding: 4rem 0;
+}
+
+/* Package Card */
+.package-section .card {
+    border: none;
+    border-radius: 1rem !important;
+    overflow: hidden !important;
+    transition: all 0.3s ease;
+}
+
+.package-section .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Card Header */
+.package-section .card-header {
+    padding: 1.5rem;
+    border: none;
+}
+
+/* Popular Card with Better Spacing */
+.popular-card {
+    transform: scale(1.05);
+    border: 3px solid #ffc107 !important;
+    z-index: 10;
+    position: relative;
+}
+
+/* Badge TERPOPULER - More Space from Header */
+.popular-card + .position-absolute {
+    top: -1rem !important; /* Increased spacing */
+}
+
+/* Badge Styling */
+.package-section .badge {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Badge Warning - Better Contrast */
+.badge.bg-warning {
+    background: #ffc107 !important;
+    color: #000 !important;
+    border: 2px solid #fff !important; /* White border for separation */
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4) !important;
+}
+
+/* Display Price */
+.package-section .display-4 {
+    font-size: 2.5rem;
+    color: #0d6efd;
+}
+
+/* CTA Button */
+.package-section .btn-lg {
+    padding: 0.875rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Trust Banner */
+.package-section .alert {
+    background: #cfe2ff;
+    border: none;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .popular-card {
+        transform: scale(1);
+        margin-bottom: 2rem;
+    }
+    
+    .package-section .row {
+        padding-top: 2rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .package-section .display-4 {
+        font-size: 2rem;
+    }
+    
+    .package-section .h2 {
+        font-size: 1.5rem;
+    }
+    
+    .package-section .row {
+        padding-top: 2rem !important;
+    }
+}
+
+
+
+
+
+
+/* =========================================
+   TESTIMONIAL SECTION - ENHANCED
+   ========================================= */
+
+/* Testimonial Stats */
+.testimonial-stat {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+.testimonial-stat strong {
+    font-size: 1.1rem;
+}
+
+.testimonial-stat small {
+    opacity: 0.9;
+}
+
+/* Hover Lift Effect */
+.hover-lift {
+    transition: all 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Button Enhancement */
+.btn-light {
+    font-weight: 600;
+    border: 2px solid transparent;
+}
+
+.btn-light:hover {
+    background: #fff;
+    color: #0d6efd;
+    border-color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .testimonial-stat {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+

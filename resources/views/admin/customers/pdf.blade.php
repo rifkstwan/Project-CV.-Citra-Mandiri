@@ -1,33 +1,50 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Customer List</title>
     <style>
-        table { width: 100%; border-collapse: collapse; }
-        th, td { border: 1px solid #333; padding: 8px; font-size: 12px; }
-        th { background: #eee; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #333;
+            padding: 8px;
+            font-size: 12px;
+        }
+
+        th {
+            background: #eee;
+        }
+
         .kop-surat {
             text-align: center;
             margin-bottom: 24px;
         }
+
         .kop-surat .info {
             display: block;
             text-align: center;
             margin: 0 auto;
         }
+
         .kop-surat hr {
             border: 1px solid #333;
             margin-top: 8px;
         }
     </style>
 </head>
+
 <body>
     <div class="kop-surat">
         <div class="info">
-            <h2 style="margin:0;">Alief Smart Wifi</h2>
+            <h2 style="margin:0;">CV. Citra Mandiri</h2>
             <p style="margin:0; font-size:13px;">
-                Jl. Nangka No.1, Dusun Jurang Jero, Kalirejo, Kec. Kabat, Kabupaten Banyuwangi, Jawa Timur 68461<br>
-                Telp: 085730902001 | Email: citramandiri@gmail.com
+                Rt.02/Rw.01, Tegowanu Wetan, Kec. Tegowanu, Kab. Grobogan<br>
+                Telp: +628122577686 | Email: citramandiri@gmail.com
             </p>
         </div>
         <hr>
@@ -59,4 +76,5 @@
         </tbody>
     </table>
 </body>
+
 </html>

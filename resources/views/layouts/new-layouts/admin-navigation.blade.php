@@ -4,6 +4,7 @@
         <a href="{{ route('admin.index') }}" class="logo-link">
             <x-application-logo class="sidebar-logo" />
             <span class="panel-title">Admin Panel</span>
+            <link rel="icon" type="image/jpeg" href="{{ asset('image/profile.jpg') }}">
         </a>
     </div>
 
@@ -13,22 +14,22 @@
             <i class="fas fa-th-large"></i>
             <span>Dashboard</span>
         </a>
-        
+
         <a class="menu-item {{ request()->routeIs('permissions.index') ? 'active' : '' }}" href="{{ route('permissions.index') }}">
             <i class="fas fa-key"></i>
             <span>Permissions</span>
         </a>
-        
+
         <a class="menu-item {{ request()->routeIs('roles.index') ? 'active' : '' }}" href="{{ route('roles.index') }}">
             <i class="fas fa-user-tag"></i>
             <span>Roles</span>
         </a>
-        
+
         <a class="menu-item {{ request()->routeIs('users.index') ? 'active' : '' }}" href="{{ route('users.index') }}">
             <i class="fas fa-users"></i>
             <span>Users</span>
         </a>
-        
+
         <a class="menu-item {{ request()->routeIs('pakets.index') ? 'active' : '' }}" href="{{ route('pakets.index') }}">
             <i class="fas fa-box-open"></i>
             <span>Pakets</span>
@@ -41,7 +42,7 @@
             <i class="fas fa-user-circle"></i>
             <span>Profile</span>
         </a>
-        
+
         <form method="POST" action="{{ route('logout') }}" class="w-full">
             @csrf
             <a class="menu-item" href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Sign Up Page |</title>
+  <title>Sign Up Page - CV. Citra Mandiri |</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
   <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
   <link rel="icon" type="image/jpeg" href="{{ asset('image/profile.jpg') }}">

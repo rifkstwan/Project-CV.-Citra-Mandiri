@@ -1,11 +1,22 @@
 <nav class="admin-sidebar">
-    <!-- Header with Logo -->
+    <!-- Header with Logo - CV. Citra Mandiri -->
     <div class="sidebar-header">
-        <a href="{{ route('admin.index') }}" class="logo-link">
-            <x-application-logo class="sidebar-logo" />
-            <span class="panel-title">Admin Panel</span>
+        <a href="{{ route('admin.index') }}" class="logo-link flex items-center gap-3">
+            <img src="{{ asset('image/profile.jpg') }}"
+                alt="CV. Citra Mandiri"
+                class="w-10 h-10 rounded-full object-cover border-2 border-blue-500 shadow-lg">
+            <div class="flex flex-col">
+                <span class="text-lg font-bold text-gray-900 dark:text-white">
+                    CV. Citra Mandiri
+                </span>
+                <span class="text-xs text-gray-500 dark:text-gray-400">
+                    Admin Panel
+                </span>
+            </div>
         </a>
     </div>
+
+
 
     <!-- Main Navigation -->
     <div class="sidebar-menu">

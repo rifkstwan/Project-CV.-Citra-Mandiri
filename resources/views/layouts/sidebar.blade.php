@@ -1,8 +1,8 @@
 <nav class="sidebar d-flex flex-column justify-content-between">
     <div>
         <div class="d-flex align-items-center gap-2 mb-5 ps-3">
-            <img src="https://storage.googleapis.com/a1aa/image/0d0863c7-adee-4b3f-d92d-b56d8884a7f6.jpg" alt="Logo"
-                width="24" height="24">
+            <img src="image/profile.jpg" alt="profile" width="40" class="rounded-circle me-2">
+            CV. Citra Mandiri
             <span class="fw-semibold fs-5 text-dark user-select-none">Dashboard</span>
         </div>
         <div class="nav flex-column gap-2">
