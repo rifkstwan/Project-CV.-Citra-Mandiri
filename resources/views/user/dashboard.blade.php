@@ -233,7 +233,9 @@
 
                     <div class="card text-center h-100 shadow-lg border-0 {{ $index === 1 ? 'popular-card' : '' }}" style="border-radius: 1rem; overflow: hidden;">
 
-                        <div class="card-header text-white py-4" style="background: linear-gradient(135deg, {{ $index === 1 ? '#dc3545, #c82333' : '#0d6efd, #0a58ca' }});">
+                        {{-- PERUBAHAN DI SINI: Pindahkan gradient ke inline style --}}
+                        <div class="card-header text-white py-4 border-0"
+                            style="background: linear-gradient(135deg, {{ $index === 1 ? '#dc3545, #c82333' : '#0d6efd, #0a58ca' }});">
                             <h3 class="h4 mb-0 fw-bold">{{ $paket->nama_paket }}</h3>
                         </div>
 
