@@ -14,7 +14,7 @@ class PaketController extends Controller implements HasMiddleware
     public static function middleware()
     {
         return [
-            new Middleware('permission:user-access', only:['index','show']),
+            new Middleware('permission:user-access', only: ['userIndex', 'show', 'pembayaran']),
             new Middleware('permission:view pakets', only: ['index']),
             new Middleware('permission:edit pakets', only: ['edit', 'update']),
             new Middleware('permission:create pakets', only: ['create', 'store']),
@@ -23,7 +23,7 @@ class PaketController extends Controller implements HasMiddleware
     }
 
     /**
-     * Menampilkan daftar paket.
+     * Admin - Menampilkan daftar paket untuk CRUD
      */
     public function index(Request $request)
     {
@@ -34,14 +34,18 @@ class PaketController extends Controller implements HasMiddleware
 
         $pakets = Pakets::query()
             ->when($validated['search'] ?? null, function ($query, $search) {
-                $query->where('nama_paket', 'like', '%'.addslashes($search).'%');
+                $query->where('nama_paket', 'like', '%' . addslashes($search) . '%');
             })
             ->when($validated['sort'] ?? 'newest', function ($query, $sort) {
                 switch ($sort) {
-                    case 'oldest': return $query->oldest();
-                    case 'name_asc': return $query->orderBy('nama_paket');
-                    case 'name_desc': return $query->orderByDesc('nama_paket');
-                    default: return $query->latest();
+                    case 'oldest':
+                        return $query->oldest();
+                    case 'name_asc':
+                        return $query->orderBy('nama_paket');
+                    case 'name_desc':
+                        return $query->orderByDesc('nama_paket');
+                    default:
+                        return $query->latest();
                 }
             })
             ->paginate(10)
@@ -53,6 +57,18 @@ class PaketController extends Controller implements HasMiddleware
         ]);
     }
 
+    /**
+     * User - Menampilkan daftar paket untuk dibeli
+     */
+    public function userIndex()
+    {
+        $pakets = Pakets::all();
+        return view('guests.dashboard', compact('pakets'));
+    }
+
+    /**
+     * Guest - Halaman landing page
+     */
     public function showGuestPackages()
     {
         $pakets = Pakets::all();
@@ -60,7 +76,7 @@ class PaketController extends Controller implements HasMiddleware
     }
 
     /**
-     * Menampilkan form tambah paket.
+     * Admin - Menampilkan form tambah paket
      */
     public function create()
     {
@@ -68,7 +84,7 @@ class PaketController extends Controller implements HasMiddleware
     }
 
     /**
-     * Menyimpan data paket baru.
+     * Admin - Menyimpan data paket baru
      */
     public function store(Request $request)
     {
@@ -82,34 +98,41 @@ class PaketController extends Controller implements HasMiddleware
 
         try {
             DB::beginTransaction();
-            
+
             Pakets::create($validated);
-            
+
             DB::commit();
-            
+
             return redirect()->route('pakets.index')
                 ->with('success', 'Paket berhasil ditambahkan!');
-                
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->route('pakets.create')
                 ->withInput()
-                ->with('error', 'Gagal menambahkan paket: '.$e->getMessage());
+                ->with('error', 'Gagal menambahkan paket: ' . $e->getMessage());
         }
     }
-    
-    /**
-     * Menampilkan detail paket.
-     */
 
+    /**
+     * User - Menampilkan detail paket untuk checkout
+     */
     public function show($id)
+    {
+        $paket = Pakets::findOrFail($id);
+        return view('pakets.show', compact('paket'));
+    }
+
+    /**
+     * User - Halaman pembayaran paket
+     */
+    public function pembayaran($id)
     {
         $paket = Pakets::findOrFail($id);
         return view('admin.pakets.pembayaran', compact('paket'));
     }
-    
+
     /**
-     * Menampilkan form edit paket.
+     * Admin - Menampilkan form edit paket
      */
     public function edit(Pakets $paket)
     {
@@ -117,7 +140,7 @@ class PaketController extends Controller implements HasMiddleware
     }
 
     /**
-     * Mengupdate data paket.
+     * Admin - Mengupdate data paket
      */
     public function update(Request $request, Pakets $paket)
     {
@@ -136,41 +159,39 @@ class PaketController extends Controller implements HasMiddleware
 
         try {
             DB::beginTransaction();
-            
+
             $paket->update($validated);
-            
+
             DB::commit();
-            
+
             return redirect()->route('pakets.index')
                 ->with('success', 'Paket berhasil diperbarui!');
-                
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->route('pakets.edit', $paket)
                 ->withInput()
-                ->with('error', 'Gagal memperbarui paket: '.$e->getMessage());
+                ->with('error', 'Gagal memperbarui paket: ' . $e->getMessage());
         }
     }
 
     /**
-     * Menghapus paket.
+     * Admin - Menghapus paket
      */
     public function destroy(Pakets $paket)
     {
         try {
             DB::beginTransaction();
-            
+
             $paket->delete();
-            
+
             DB::commit();
-            
+
             return redirect()->route('pakets.index')
                 ->with('success', 'Paket berhasil dihapus!');
-                
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->route('pakets.index')
-                ->with('error', 'Gagal menghapus paket: '.$e->getMessage());
+                ->with('error', 'Gagal menghapus paket: ' . $e->getMessage());
         }
     }
 }

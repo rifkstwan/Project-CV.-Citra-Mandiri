@@ -9,9 +9,43 @@ use Spatie\Permission\Models\Role;
 use Illuminate\Routing\Controllers\HasMiddleware;
 use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Support\Facades\Hash;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class UserController extends Controller implements HasMiddleware
 {
+    /**
+     * Export ALL USERS (Admin + Customer) ke PDF - STREAM (buka di browser)
+     */
+    public function exportPdf()
+    {
+        $users = User::with('roles')->orderBy('name')->get();
+
+        $pdf = Pdf::loadView('admin.users.pdf', [
+            'users' => $users,
+        ])->setPaper('a4', 'landscape');
+
+        // UBAH INI: download() → stream()
+        return $pdf->stream('all-users-' . now()->format('d-m-Y') . '.pdf');
+    }
+
+    /**
+     * Export CUSTOMERS ONLY (role = user) ke PDF - STREAM (buka di browser)
+     */
+    public function exportCustomersPdf()
+    {
+        $customers = User::with('roles')
+            ->whereHas('roles', fn($q) => $q->where('name', 'user'))
+            ->orderBy('name')
+            ->get();
+
+        $pdf = Pdf::loadView('admin.users.customers-pdf', [
+            'customers' => $customers,
+        ])->setPaper('a4', 'landscape');
+
+        // UBAH INI: download() → stream()
+        return $pdf->stream('customer-list-' . now()->format('d-m-Y') . '.pdf');
+    }
+
     public static function middleware()
     {
         return [
@@ -34,18 +68,20 @@ class UserController extends Controller implements HasMiddleware
         ]);
 
         $users = User::with('roles')
-            ->when($validated['search'] ?? null, function($query, $search) {
-                $query->where(function($q) use ($search) {
-                    $q->where('name', 'like', '%'.$search.'%')
-                        ->orWhere('email', 'like', '%'.$search.'%')
-                        ->orWhere('phone', 'like', '%'.$search.'%');
+            ->when($validated['search'] ?? null, function ($query, $search) {
+                $query->where(function ($q) use ($search) {
+                    $q->where('name', 'like', '%' . $search . '%')
+                        ->orWhere('email', 'like', '%' . $search . '%')
+                        ->orWhere('phone', 'like', '%' . $search . '%');
                 });
             })
-            ->when($validated['role'] ?? null,function($query, $role) {
+            ->when($validated['role'] ?? null, function ($query, $role) {
                 $query->whereHas('roles', fn($q) => $q->where('id', $role));
             })
-            ->orderBy($validated['sort'] ?? 'created_at',
-                str_contains($validated['sort'] ?? '', 'name_') ? 'asc' : 'desc')
+            ->orderBy(
+                $validated['sort'] ?? 'created_at',
+                str_contains($validated['sort'] ?? '', 'name_') ? 'asc' : 'desc'
+            )
             ->paginate(10);
 
         return view('admin.users.list', [
@@ -60,7 +96,7 @@ class UserController extends Controller implements HasMiddleware
      */
     public function create()
     {
-        $roles = Role::orderBy('name','ASC')->get();
+        $roles = Role::orderBy('name', 'ASC')->get();
         return view('admin.users.create', [
             'roles' => $roles,
         ]);
@@ -102,7 +138,7 @@ class UserController extends Controller implements HasMiddleware
     public function edit(string $id)
     {
         $user = User::findOrFail($id);
-        $roles = Role::orderBy('name','ASC')->get();
+        $roles = Role::orderBy('name', 'ASC')->get();
         $hasRoles = $user->roles->pluck('id');
 
         return view('admin.users.edit', [
@@ -120,8 +156,8 @@ class UserController extends Controller implements HasMiddleware
         $user = User::findOrFail($id);
         $validator = Validator::make($request->all(), [
             'name' => 'required|min:3',
-            'email' => 'required|email|unique:users,email,'.$id.',id',
-            'phone' => 'required|unique:users,phone,'.$id,
+            'email' => 'required|email|unique:users,email,' . $id . ',id',
+            'phone' => 'required|unique:users,phone,' . $id,
             'address' => 'nullable',
         ]);
 

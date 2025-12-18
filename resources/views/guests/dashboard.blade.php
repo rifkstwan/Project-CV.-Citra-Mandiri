@@ -139,7 +139,7 @@
                 </div>
             </div>
 
-            <!-- Animated Cards Container - HANYA 1 KALI -->
+            <!-- Animated Cards Container -->
             <div class="animated-cards-container">
                 <div class="animated-card-wrapper">
                     @for ($i = 0; $i < 2; $i++)
@@ -252,7 +252,7 @@
                             <div class="card text-center h-100 shadow-lg border-0 {{ $index === 1 ? 'popular-card' : '' }}" style="border-radius: 1rem; overflow: hidden;">
 
                                 <div class="card-header text-white py-4" style="background: linear-gradient(135deg, {{ $index === 1 ? '#dc3545, #c82333' : '#0d6efd, #0a58ca' }});">
-                                    <h3 class="h4 mb-0 fw-bold">{{ $paket['nama_paket'] }}</h3>
+                                    <h3 class="h4 mb-0 fw-bold">{{ $paket->nama_paket }}</h3>
                                 </div>
 
                                 <div class="card-body py-4">
@@ -262,13 +262,13 @@
                                         </span>
                                     </div>
 
-                                    <p class="display-4 fw-bold text-primary mb-0">{{ $paket['kecepatan'] }}</p>
+                                    <p class="display-4 fw-bold text-primary mb-0">{{ $paket->kecepatan }}</p>
                                     <p class="text-muted small mb-4">Download & Upload</p>
 
                                     <hr class="my-3">
 
                                     <p class="text-muted small mb-1">Harga Bulanan</p>
-                                    <p class="h2 fw-bold mb-0">Rp {{ number_format($paket['harga'], 0, ',', '.') }}</p>
+                                    <p class="h2 fw-bold mb-0">Rp {{ number_format($paket->harga, 0, ',', '.') }}</p>
                                     <p class="text-success small fw-bold">
                                         <i class="fas fa-check-circle me-1"></i>Hemat & Terjangkau
                                     </p>
@@ -287,9 +287,17 @@
                                 </div>
 
                                 <div class="card-footer bg-transparent border-0 pb-4 px-4">
+                                    @auth
+                                    {{-- Jika sudah login, langsung ke pembayaran --}}
+                                    <a href="{{ route('pakets.pembayaran', $paket->id) }}" class="btn {{ $index === 1 ? 'btn-danger' : 'btn-primary' }} btn-lg w-100 rounded-pill shadow">
+                                        <i class="fas fa-bolt me-2"></i>Berlangganan Sekarang
+                                    </a>
+                                    @else
+                                    {{-- Jika belum login, ke register dulu --}}
                                     <a href="{{ route('register') }}" class="btn {{ $index === 1 ? 'btn-danger' : 'btn-primary' }} btn-lg w-100 rounded-pill shadow">
                                         <i class="fas fa-bolt me-2"></i>Berlangganan Sekarang
                                     </a>
+                                    @endauth
                                     <p class="text-muted small mt-2 mb-0">
                                         <i class="fas fa-clock me-1"></i>Aktif dalam 24 jam
                                     </p>
@@ -314,7 +322,7 @@
             </div>
         </section>
 
-        <!-- Testimonial Section - CLEAN VERSION -->
+        <!-- Testimonial Section -->
         <section class="py-5 bg-primary text-white">
             <div class="container">
                 <div class="row align-items-center">

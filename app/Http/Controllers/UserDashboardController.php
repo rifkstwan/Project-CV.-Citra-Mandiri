@@ -12,26 +12,35 @@ use Illuminate\Routing\Controllers\Middleware;
 class UserDashboardController extends Controller implements HasMiddleware
 {
     /**
-     * Display a listing of the resource.
+     * Middleware untuk akses user
      */
-
-    public static function middleware()
+    public static function middleware(): array
     {
-         return[
+        return [
             new Middleware('permission:user-access', only: ['index']),
-         ];
+        ];
     }
+
+    /**
+     * Display user dashboard
+     */
     public function index()
     {
-        // Ambil semua paket untuk ditampilkan di halaman user
-        $pakets = Pakets::all();
+        $user = Auth::user();
 
-        // Ambil paket aktif user
+        // Jika admin, redirect ke admin dashboard
+        if ($user->role === 'admin') {
+            return redirect()->route('admin.index');
+        }
+
+        // Ambil paket aktif user (yang sudah diaktivasi)
         $activeOrders = Orders::with('paket')
-            ->where('user_id', Auth::id())
+            ->where('user_id', $user->id)
             ->where('is_activated', 'yes')
+            ->latest()
             ->get();
 
-        return view('user.dashboard', compact('pakets', 'activeOrders'));
+        // Return ke view user.dashboard
+        return view('user.dashboard', compact('activeOrders'));
     }
 }

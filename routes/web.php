@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Http;
 use App\Http\Controllers\{
     AdminDashboardController,
     OrdersController,
@@ -11,7 +10,6 @@ use App\Http\Controllers\{
     RoleController,
     UserController,
     PaketController,
-    CustomerController,
     MessageController,
     DeviceController,
     MonitoringController,
@@ -77,7 +75,7 @@ Route::middleware(['auth', 'permission:admin-access', 'verified'])->group(functi
         Route::delete('/', [RoleController::class, 'destroy'])->name('destroy');
     });
 
-    // ===== USERS =====
+    // ===== USERS & CUSTOMERS (GABUNGAN) =====
     Route::prefix('users')->name('users.')->group(function () {
         Route::get('/', [UserController::class, 'index'])->name('index');
         Route::get('/create', [UserController::class, 'create'])->name('create');
@@ -85,15 +83,19 @@ Route::middleware(['auth', 'permission:admin-access', 'verified'])->group(functi
         Route::get('/{id}/edit', [UserController::class, 'edit'])->name('edit');
         Route::post('/{id}', [UserController::class, 'update'])->name('update');
         Route::delete('/', [UserController::class, 'destroy'])->name('destroy');
+
+        // ===== PDF ROUTES =====
+        Route::get('/pdf', [UserController::class, 'exportPdf'])->name('pdf'); // Semua users
+        Route::get('/customers/pdf', [UserController::class, 'exportCustomersPdf'])->name('customers.pdf'); // Khusus customer
     });
 
-    // ===== CUSTOMERS =====
-    Route::prefix('customers')->name('customers.')->group(function () {
-        Route::get('/', [CustomerController::class, 'index'])->name('index');
-        Route::get('/pdf', [CustomerController::class, 'exportPdf'])->name('pdf');
-    });
+    // ===== HAPUS MENU CUSTOMERS (sudah digabung ke Users) =====
+    // Route::prefix('customers')->name('customers.')->group(function () {
+    //     Route::get('/', [CustomerController::class, 'index'])->name('index');
+    //     Route::get('/pdf', [CustomerController::class, 'exportPdf'])->name('pdf');
+    // });
 
-    // ===== PAKETS =====
+    // ===== PAKETS (Admin Only - CRUD) =====
     Route::prefix('pakets')->name('pakets.')->group(function () {
         Route::get('/', [PaketController::class, 'index'])->name('index');
         Route::get('/create', [PaketController::class, 'create'])->name('create');
@@ -148,7 +150,8 @@ Route::middleware('auth')->group(function () {
         Route::delete('/', [ProfileController::class, 'destroy'])->name('destroy');
     });
 
-    // ===== PAKET CHECKOUT (User) =====
+    // ===== PAKET - USER BISA LIHAT & BELI =====
+    Route::get('/paket', [PaketController::class, 'userIndex'])->name('user.pakets.index');
     Route::get('/paket/{id}', [PaketController::class, 'show'])->name('pakets.show');
     Route::get('/paket/{id}/pembayaran', [PaketController::class, 'pembayaran'])->name('pakets.pembayaran');
     Route::post('/Checkout', [OrdersController::class, 'checkout'])->name('pakets.checkout');

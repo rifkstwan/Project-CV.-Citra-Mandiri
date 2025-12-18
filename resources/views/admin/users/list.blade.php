@@ -42,7 +42,19 @@
                                     </select>
                                 </form>
 
-                                <a href="{{ route('users.create') }}" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors flex items-center whitespace-nowrap">
+                                {{-- TOMBOL PDF (BARU!) --}}
+                                <a href="{{ route('users.pdf') }}"
+                                    class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors flex items-center whitespace-nowrap">
+                                    <i class="fas fa-file-pdf mr-2"></i>All Users PDF
+                                </a>
+
+                                <a href="{{ route('users.customers.pdf') }}"
+                                    class="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-md transition-colors flex items-center whitespace-nowrap">
+                                    <i class="fas fa-file-pdf mr-2"></i>Customers PDF
+                                </a>
+
+                                <a href="{{ route('users.create') }}"
+                                    class="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-md transition-colors flex items-center whitespace-nowrap">
                                     <i class="fas fa-plus mr-2"></i>Create User
                                 </a>
                             </div>

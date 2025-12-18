@@ -16,8 +16,6 @@
         </a>
     </div>
 
-
-
     <!-- Main Navigation -->
     <div class="sidebar-menu">
         <a class="menu-item {{ request()->routeIs('admin.index') ? 'active' : '' }}" href="{{ route('admin.index') }}">
@@ -35,15 +33,17 @@
             <span>Roles</span>
         </a>
 
+        {{-- MENU USERS & CUSTOMERS (GABUNGAN) --}}
         <a class="menu-item {{ request()->routeIs('users.index') ? 'active' : '' }}" href="{{ route('users.index') }}">
-            <i class="fas fa-user"></i>
-            <span>Users</span>
-        </a>
-
-        <a class="menu-item {{ request()->routeIs('customers.index') ? 'active' : '' }}" href="{{ route('customers.index') }}">
             <i class="fas fa-users"></i>
             <span>Customers</span>
         </a>
+
+        {{-- HAPUS MENU CUSTOMERS LAMA (SUDAH DIGABUNG) --}}
+        {{-- <a class="menu-item {{ request()->routeIs('customers.index') ? 'active' : '' }}" href="{{ route('customers.index') }}">
+        <i class="fas fa-users"></i>
+        <span>Customers</span>
+        </a> --}}
 
         <a class="menu-item {{ request()->routeIs('pakets.index') ? 'active' : '' }}" href="{{ route('pakets.index') }}">
             <i class="fas fa-box-open"></i>
@@ -64,7 +64,6 @@
             <i class="fas fa-book"></i>
             <span>Monitoring</span>
         </a>
-
     </div>
 
     <!-- Footer Menu -->
