@@ -32,23 +32,14 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Set working directory
 WORKDIR /app
 
-# Copy composer files
-COPY composer.json composer.lock ./
+# Copy ALL files first
+COPY . .
 
 # Install PHP dependencies
 RUN composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist
 
-# Copy package files
-COPY package*.json ./
-
-# Install Node dependencies
-RUN npm ci --omit=dev
-
-# Copy application files
-COPY . .
-
-# Build assets
-RUN npm run build
+# Install Node dependencies and build assets
+RUN npm ci --omit=dev && npm run build
 
 # Create required directories and set permissions
 RUN mkdir -p storage/framework/{sessions,views,cache,testing} \
