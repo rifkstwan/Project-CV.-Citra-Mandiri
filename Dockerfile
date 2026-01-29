@@ -38,8 +38,14 @@ COPY . .
 # Install PHP dependencies
 RUN composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist
 
-# Install Node dependencies and build assets
-RUN npm ci --omit=dev && npm run build
+# Install Node dependencies (WITH dev dependencies for build)
+RUN npm install
+
+# Build assets
+RUN npm run build
+
+# Remove node_modules to save space (optional)
+RUN rm -rf node_modules
 
 # Create required directories and set permissions
 RUN mkdir -p storage/framework/{sessions,views,cache,testing} \
