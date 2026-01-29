@@ -57,9 +57,12 @@ RUN mkdir -p storage/framework/{sessions,views,cache,testing} \
 EXPOSE 8000
 
 # Start application
-CMD php artisan config:cache && \
+CMD php artisan config:clear && \
+    php artisan cache:clear && \
+    php artisan view:clear && \
+    php artisan storage:link && \
+    php artisan config:cache && \
     php artisan route:cache && \
     php artisan view:cache && \
     php artisan migrate --force && \
-    php artisan storage:link && \
     php artisan serve --host=0.0.0.0 --port=$PORT
